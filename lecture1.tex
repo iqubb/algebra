@@ -1,0 +1,78 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section{Определение линейного оператора. Простейшие свойства}
+
+\newtheorem*{LinearOperatorDefinition}{Определение}
+\begin{LinearOperatorDefinition}
+
+\hfill
+Пусть V и W - векторные пространства над полем P. 
+Отображение $f: V \mapsto W$ 
+называется линейным оператором пространства V в пространство W, если 
+$\forall a, b \in V$ и $\forall \alpha, \beta \in P$:
+\[ f(\alpha a + \beta b) = \alpha f(a) + \beta f(b) \]
+
+\end{LinearOperatorDefinition}
+
+\newtheorem*{LinearOperatorProperty}{Простейшие свойства линейного оператора}
+\begin{LinearOperatorProperty}
+	
+	\hfill
+	\begin{enumerate}  
+		\item 	$f(0_{V}) = 0_{W}$ 
+
+				$f(-a) = -f(a) \quad \forall a \in V$  
+			
+		\begin{proof}
+			Из свойств линейности: 
+			$f(\alpha a) = \alpha f(a) \quad \forall a \in V$ и $\forall \alpha \in P$. 
+			Полагая $\alpha = 0$ и $\alpha = -1$, получаем: 
+			$f(0_{v}) = 0_{w}$ и $f(-a) = -f(a)$
+		\end{proof}
+
+
+		\item 	Линейный оператор линейно зависимую систему отображает в линейно зависимую
+
+
+		\begin{proof}
+			Пусть A - линейно зависимая система векторов, тогда существует нетривиальная линейная комбинация векторов этой системы, равная нулевому вектору:
+			\[\alpha_{1}a_{1} + ... + \alpha_{n}a_{n} = 0_{V}\]
+			Подействуем оператором и воспользуемся свойствами линейности:
+			\[f(\alpha_{1}a_{1} + ... + \alpha_{n}a_{n} = 0_{V}) = \alpha_{1}f(a_{1}) + ... + \alpha_{n}f(a_{n}) = 0_{V}\]
+			Получили нетривиальную линейную комбинацию векторов системы $(f(a_{1}, ..., f(a_{n})))$ равную нулевому вектору, следовательно эта система линейно зависимая.
+		\end{proof}
+
+				\textbf{Следствие.} 	Для любой системы A и линейного оператора f: 
+										$ rank f(A) \leq rank A $
+
+
+		\item 	Пусть линейный оператор $f$ систему векторов 
+				$A = (a_{1}, ..., a_{n})$ 
+				отображается в систему векторов 
+				$f(A) = (f(a_{1}), ..., f(a_{n}))$.
+				Тогда $f(L(A)) = L(f(A))$ 
+
+		\begin{proof}
+			Доказательство следует из свойств линейности:
+			\[f(\alpha_{1}a_{1} + ... + \alpha_{n}a_{n} = 0_{v}) = \alpha_{1}f(a_{1}) + ... + \alpha_{n}f(a_{n})\]
+		\end{proof}
+
+
+		\item 	Если U - подпространство пространства V, то $f(U)$ - также подпространство пространства V, причем $\dim{f(U)} \leq \dim{U}$
+
+
+
+		\begin{proof}
+			Пусть A - базис подпространства U пространства V, тогда U = L(A), следовательно f(U) = f(L(A)), используя свойство 3, получаем:
+			f(U) = f(L(A)) = L(f(A)). Так как любая линейная оболочка является подпространством, то f(U) - подпространство пространства V.
+
+			$\dim{f(U)} = \dim{L(f(A))} = rank f(A) \leq rank(A) = \dim{L(A)} = dim{U}$
+		\end{proof}
+
+	\end{enumerate}
+
+\end{LinearOperatorProperty}
+
+
+\end{document}

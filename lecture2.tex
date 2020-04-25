@@ -1,0 +1,68 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section{Матрица линейного оператора}
+
+\newtheorem*{LinearOperatorMatrix}{Теорема}
+\begin{LinearOperatorMatrix}
+Пусть V - векторное пространство над полем P, $A(a_{1}, ..., a_{n})$ - базис пространства V, $B(b_{1}, ..., b_{n})$ - некоторая система векторов из V. Тогда существует единственный линейный оператор $f:V\mapsto V$, для которого $f(a_{i}) = b_{i}$
+\end{LinearOperatorMatrix}
+\begin{proof}
+
+	Доказательство проведем в 3 этапа:
+	\begin{enumerate}
+		\item 	Докажем существование такого оператора:
+
+				Определим $f(x) = BX$, где 
+
+				\quad X - координатный столбец произвольного вектора x; 
+
+				\quad $B = (B_{1}, ..., B_{n})$ - матрица, состоящая из координатных столбцов $B_{i}$ (координатный столбец i-ого вектора системы B). 
+
+				Координатный столбец вектора $a_{i}$ в базисе A имеет вид
+					$\begin{pmatrix}
+					0\\
+					\vdots\\
+					1\\
+					\vdots\\
+					0
+					\end{pmatrix}$, на позиции i - единица, а на всех остальных нули. Получаем $f(a_{i}) = b_{i}$.
+		\item 	Докажем линейность оператора:
+
+				Пусть $x, y \in V$ имеют координатные столбцы X и Y в базисе A,  $\alpha, \beta \in P$. Тогда координатный столбец вектора $\alpha x + \beta y$ в том же базисе - $\alpha X + \beta Y$, следовательно, 
+				\[f(\alpha x + \beta y) = B(\alpha X + \beta Y) = \alpha BX + \beta BY = \alpha f(x) + \beta f(y)\] Итак $f$ - искомые линейный оператор.
+
+		\item 	Докажем единственность такого оператора:
+
+				Пусть $g:V\mapsto V$ - такой линейный оператор, что $g(a_{i}) = b_{i}$ и x - произвольный вектор из V с координатным столбцом X в базисе A, тогда
+				\[x = \begin{pmatrix} a_{1} & ... & a_{n} \end{pmatrix} X\]
+				Получаем,
+				\[g(x) = \begin{pmatrix} g(a_{1}) & ... & g(a_{n}) \end{pmatrix}X = \begin{pmatrix} b_{1} & ... & b_{n} \end{pmatrix}X = f(x)\]
+				Следовательно, g = f. 
+
+	\end{enumerate}
+\end{proof}
+
+Из теоремы следует,	что действие линейного оператора пространства V полностью определяется действием этого оператора на базис пространства V.
+
+\newtheorem*{LinearOperatorMatrixDef}{Определение}
+\begin{LinearOperatorMatrixDef}
+Пусть $A(a_{1}, ..., a_{n})$ - базис пространства V, $f$ - линейный оператора пространства V. Матрица, составленная из координатных столбцов векторов $f(a_{i})$ в базисе A, называется \textbf{матрицей линейного оператора $f$ в базисе A}. Таким образом, если обозначить через $A_{i}$ - координатные столбцы векторов $f(a_{i})$ в базисе A, то $M_{f} = \begin{pmatrix} A_{1} & \cdots & A_{n}\end{pmatrix} \in P_{n, n}$
+\end{LinearOperatorMatrixDef}
+
+Из определения следует, что матрица линейного оператора $f$ в базисе A является матрицей перехода от базиса A к системе векторов $f(A)$.
+
+
+\newtheorem*{LinearOperatorMatrixT2}{Теорема}
+\begin{LinearOperatorMatrixT2}
+Пусть $M_{f}$ - матрица линейного оператора $f:V\mapsto V$ в базисе А, $X_{a}$ и $X_{f(a)}$ - координатные столбцы векторов a и $f(a)$ в базисе A. Тогда $X_{f(a)} = M_{f}X_{a}$ 
+\end{LinearOperatorMatrixT2}
+
+\begin{proof}
+Определим две матрицы строки \[\overline{A} = \begin{pmatrix} a_{1} && \cdots && a_{n}\end{pmatrix} \quad \text{и} \quad \overline{f(A)} = \begin{pmatrix} f(a_{1}) && \cdots && f(a_{n})\end{pmatrix}\]
+
+Так как $A(a_{1}, \cdots, a_{n})$ - базис пространства V, то
+$a = \alpha_{1} a_{1} + \cdots + \alpha_{n} a_{n} = \overline{A}X_{a} \quad \forall a \in V$. Тогда вектор $f(a) = f(\alpha_{1} a_{1} + \cdots + \alpha_{n} a_{n}) = \alpha_{1} f(a_{1}) + \cdots + \alpha_{n} f(a_{n}) = \overline{f(A)} X_{a} $. Из определения матрицы перехода следует, что $\overline{f(A)} = \overline{A} S_{A \rightarrow f(A)} = \overline{A} M_{f}$. Таким образом, $f(A) = \overline{f(A)} X_{a} = \overline{A} M_{f} X_{a} = \overline{A} (M_{f}X_{a})$, следовательно, $M_{f}X_{a}$ - координаты вектора $f(a)$ в базисе A, то есть $X_{f(a)} = M_{f}X_{a}$.
+
+\end{proof}
+\end{document}
