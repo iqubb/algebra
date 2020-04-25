@@ -29,3 +29,7 @@
 
   * Скачать последнюю версию конспекта можно в секции release, позже добавлю ссылку
 
+### Полезные материалы
+
+  * [Синхронизация вашего fork'нутого репозитория с оригинальным репозиторием через браузер](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
+ 
