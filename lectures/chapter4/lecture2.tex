@@ -1,0 +1,62 @@
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+\section{Канонический вид квадратичной формы}
+
+
+\newtheorem*{CanonicalDef}{Определение}
+\begin{CanonicalDef}
+Квадратичная форма называется \underline{канонической}, если её матрица - диагональная,
+то есть каноническая квадратичная форма имеет вид $\alpha_{1 1} x^{2}_{1}, \cdots, \alpha_{n n} x^{2}_{n}$.
+\end{CanonicalDef}
+
+\newtheorem*{CanonicalViewTheorem}{Теорема}
+\begin{CanonicalViewTheorem}
+Для любой квадратичной формы существует эквивалентная каноническая квадратичная форма.
+\end{CanonicalViewTheorem}
+\begin{proof}
+Нереальное доказательство по индукции.
+\end{proof}
+
+\newtheorem*{CanonicalViewDef}{Определение}
+\begin{CanonicalViewDef}
+\underline{Каноническим видом} квадратичной формы называется эквивалентная ей каноническая форма.
+\end{CanonicalViewDef}
+
+\newtheorem*{AngleMinorsDef}{Определение}
+\begin{AngleMinorsDef}
+\underline{Угловыми минорами} матрицы $ A(\alpha_{i j}) $ называются миноры:
+\[
+\Delta_{1} =
+\begin{vmatrix}
+  \alpha_{1 1}
+\end{vmatrix}
+\text{, }
+\Delta_{2} =
+\begin{vmatrix}
+  \alpha_{1 1} && \alpha_{1 2} \\
+  \alpha_{2 1} && \alpha_{2 2}
+\end{vmatrix}
+\text{, }
+\cdots
+\text{, }
+\Delta_{k} =
+  \begin{vmatrix}
+    \alpha_{1 1} && \cdots && \alpha_{1 k}    \\
+    \vdots && \ddots && \vdots                \\
+    \alpha_{k 1} && \cdots && \alpha_{k k}    \\
+  \end{vmatrix}
+\text{, }
+\cdots
+\text{, }
+\Delta_{n} = \text{det A.}
+\]
+\end{AngleMinorsDef}
+
+\newtheorem*{YakobyTh}{Теорема. (a.k.a. Формула Якоби)}
+\begin{YakobyTh}
+Если матрица квадратичной формы $f(x_{1}, \cdots, x_{n})$ имеет ненулевые угловые миноры, то
+$f$ эквивалентна канонической квадратичной форме $\delta_{1} y_{1} + \cdots + \delta_{n} y^{2}_{n}$,
+где $\delta_{i} = \frac{\Delta_{i - 1}}{\Delta{i}} (\Delta_{0} = 1)$.
+\end{YakobyTh}
+
+\end{document}
